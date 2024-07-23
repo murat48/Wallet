@@ -13,7 +13,10 @@ export const initialize_user = async () => {
             Authorization: `Bearer  TEST_API_KEY:951118525fe74c74d28c8e4ac20a4459:8bc450f8d1bf979205f00c8a93291e3c`,
             "X-User-Token": `${process.env.NEXT_PUBLIC_USER_TOKEN}`,
         },
-        data: { idempotencyKey: idempotencyKey, blockchains: ["MATIC-AMOY"] },
+        data: {
+            idempotencyKey: idempotencyKey, accountType: "SCA",
+            blockchains: ["MATIC-AMOY"]
+        },
     };
 
     return axios
